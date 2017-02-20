@@ -8,6 +8,13 @@ http://ta-lib.org/
 
 To use the library you need TA-Lib installed.
 
+
+===
+
+每个函数增加两个返回值，分别代表ta-lib的outBegIdx和outNBElement参数，以便处理需要ignore的值
+
+===
+
 ## Example
 ```go
 package main

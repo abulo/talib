@@ -385,13 +385,20 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl2Crows(open, high, low, close []float64) ([]int, int, int) {
+func Cdl2Crows(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL2CROWS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
+//func Cdl2Crows_bbb(open, high, low, close []float64) ([]C.int, int, int) {
+//	var outBegIdx C.int
+//	var outNBElement C.int
+//	outInteger := make([]C.int, len(open))
+//	C.TA_CDL2CROWS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, &outInteger[0])
+//	return outInteger, int(outBegIdx), int(outNBElement)
+//}
 
 /*Cdl3BlackCrows - Three Black Crows
 
@@ -400,10 +407,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3BlackCrows(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3BlackCrows(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3BLACKCROWS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -415,10 +422,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3Inside(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3Inside(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3INSIDE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -430,10 +437,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3LineStrike(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3LineStrike(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3LINESTRIKE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -445,10 +452,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3Outside(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3Outside(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3OUTSIDE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -460,10 +467,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3StarsinSouth(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3StarsinSouth(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3STARSINSOUTH(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -475,10 +482,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func Cdl3WhiteSoldiers(open, high, low, close []float64) ([]int, int, int) {
+func Cdl3WhiteSoldiers(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDL3WHITESOLDIERS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -498,10 +505,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlAbandonedBaby(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlAbandonedBaby(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLABANDONEDBABY(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -513,10 +520,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlAdvanceBlock(open, high, low, close []float64) ([]int, int, int) {
+func CdlAdvanceBlock(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLADVANCEBLOCK(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -528,10 +535,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlBelthold(open, high, low, close []float64) ([]int, int, int) {
+func CdlBelthold(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLBELTHOLD(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -543,10 +550,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlBreakaway(open, high, low, close []float64) ([]int, int, int) {
+func CdlBreakaway(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLBREAKAWAY(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -558,10 +565,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlClosingMarubozu(open, high, low, close []float64) ([]int, int, int) {
+func CdlClosingMarubozu(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLCLOSINGMARUBOZU(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -573,10 +580,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlConcealBabySwall(open, high, low, close []float64) ([]int, int, int) {
+func CdlConcealBabySwall(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLCONCEALBABYSWALL(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -588,10 +595,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlCounterattack(open, high, low, close []float64) ([]int, int, int) {
+func CdlCounterattack(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLCOUNTERATTACK(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -611,10 +618,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlDarkCloudCover(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlDarkCloudCover(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLDARKCLOUDCOVER(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -626,10 +633,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlDoji(open, high, low, close []float64) ([]int, int, int) {
+func CdlDoji(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLDOJI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -641,10 +648,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlDojiStar(open, high, low, close []float64) ([]int, int, int) {
+func CdlDojiStar(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLDOJISTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -656,10 +663,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlDragonflyDoji(open, high, low, close []float64) ([]int, int, int) {
+func CdlDragonflyDoji(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLDRAGONFLYDOJI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -671,10 +678,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlEngulfing(open, high, low, close []float64) ([]int, int, int) {
+func CdlEngulfing(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLENGULFING(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -694,10 +701,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlEveningDojiStar(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlEveningDojiStar(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLEVENINGDOJISTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -717,10 +724,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlEveningStar(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlEveningStar(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLEVENINGSTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -732,10 +739,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlGapSidesideWhite(open, high, low, close []float64) ([]int, int, int) {
+func CdlGapSidesideWhite(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLGAPSIDESIDEWHITE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -747,10 +754,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlGravestoneDoji(open, high, low, close []float64) ([]int, int, int) {
+func CdlGravestoneDoji(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLGRAVESTONEDOJI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -762,10 +769,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHammer(open, high, low, close []float64) ([]int, int, int) {
+func CdlHammer(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHAMMER(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -777,10 +784,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHangingMan(open, high, low, close []float64) ([]int, int, int) {
+func CdlHangingMan(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHANGINGMAN(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -792,10 +799,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHarami(open, high, low, close []float64) ([]int, int, int) {
+func CdlHarami(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHARAMI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -807,10 +814,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHaramiCross(open, high, low, close []float64) ([]int, int, int) {
+func CdlHaramiCross(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHARAMICROSS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -822,10 +829,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHighWave(open, high, low, close []float64) ([]int, int, int) {
+func CdlHighWave(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHIGHWAVE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -837,10 +844,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHikkake(open, high, low, close []float64) ([]int, int, int) {
+func CdlHikkake(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHIKKAKE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -852,10 +859,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHikkakeMod(open, high, low, close []float64) ([]int, int, int) {
+func CdlHikkakeMod(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHIKKAKEMOD(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -867,10 +874,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlHomingPigeon(open, high, low, close []float64) ([]int, int, int) {
+func CdlHomingPigeon(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLHOMINGPIGEON(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -882,10 +889,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlIdentical3Crows(open, high, low, close []float64) ([]int, int, int) {
+func CdlIdentical3Crows(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLIDENTICAL3CROWS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -897,10 +904,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlInNeck(open, high, low, close []float64) ([]int, int, int) {
+func CdlInNeck(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLINNECK(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -912,10 +919,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlInvertedHammer(open, high, low, close []float64) ([]int, int, int) {
+func CdlInvertedHammer(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLINVERTEDHAMMER(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -927,10 +934,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlKicking(open, high, low, close []float64) ([]int, int, int) {
+func CdlKicking(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLKICKING(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -942,10 +949,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlKickingByLength(open, high, low, close []float64) ([]int, int, int) {
+func CdlKickingByLength(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLKICKINGBYLENGTH(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -957,10 +964,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlLadderBottom(open, high, low, close []float64) ([]int, int, int) {
+func CdlLadderBottom(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLLADDERBOTTOM(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -972,10 +979,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlLongLeggedDoji(open, high, low, close []float64) ([]int, int, int) {
+func CdlLongLeggedDoji(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLLONGLEGGEDDOJI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -987,10 +994,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlLongLine(open, high, low, close []float64) ([]int, int, int) {
+func CdlLongLine(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLLONGLINE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1002,10 +1009,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlMarubozu(open, high, low, close []float64) ([]int, int, int) {
+func CdlMarubozu(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLMARUBOZU(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1017,10 +1024,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlMatchingLow(open, high, low, close []float64) ([]int, int, int) {
+func CdlMatchingLow(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLMATCHINGLOW(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1040,10 +1047,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlMatHold(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlMatHold(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLMATHOLD(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1063,10 +1070,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlMorningDojiStar(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlMorningDojiStar(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLMORNINGDOJISTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1086,10 +1093,10 @@ optInPenetration:(From 0 to TA_REAL_MAX)
 Percentage of penetration of a candle within another candle
 
 */
-func CdlMorningStar(open, high, low, close []float64, penetration float64) ([]int, int, int) {
+func CdlMorningStar(open, high, low, close []float64, penetration float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLMORNINGSTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), C.double(penetration), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1101,10 +1108,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlOnNeck(open, high, low, close []float64) ([]int, int, int) {
+func CdlOnNeck(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLONNECK(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1116,10 +1123,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlPiercing(open, high, low, close []float64) ([]int, int, int) {
+func CdlPiercing(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLPIERCING(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1131,10 +1138,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlRickshawMan(open, high, low, close []float64) ([]int, int, int) {
+func CdlRickshawMan(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLRICKSHAWMAN(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1146,10 +1153,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlRiseFall3Methods(open, high, low, close []float64) ([]int, int, int) {
+func CdlRiseFall3Methods(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLRISEFALL3METHODS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1161,10 +1168,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlSeparatingLines(open, high, low, close []float64) ([]int, int, int) {
+func CdlSeparatingLines(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSEPARATINGLINES(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1176,10 +1183,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlShootingStar(open, high, low, close []float64) ([]int, int, int) {
+func CdlShootingStar(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSHOOTINGSTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1191,10 +1198,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlShortLine(open, high, low, close []float64) ([]int, int, int) {
+func CdlShortLine(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSHORTLINE(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1206,10 +1213,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlSpinningTop(open, high, low, close []float64) ([]int, int, int) {
+func CdlSpinningTop(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSPINNINGTOP(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1221,10 +1228,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlStalledPattern(open, high, low, close []float64) ([]int, int, int) {
+func CdlStalledPattern(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSTALLEDPATTERN(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1236,10 +1243,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlStickSandwich(open, high, low, close []float64) ([]int, int, int) {
+func CdlStickSandwich(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLSTICKSANDWICH(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1251,10 +1258,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlTakuri(open, high, low, close []float64) ([]int, int, int) {
+func CdlTakuri(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLTAKURI(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1266,10 +1273,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlTasukiGap(open, high, low, close []float64) ([]int, int, int) {
+func CdlTasukiGap(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLTASUKIGAP(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1281,10 +1288,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlThrusting(open, high, low, close []float64) ([]int, int, int) {
+func CdlThrusting(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLTHRUSTING(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1296,10 +1303,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlTristar(open, high, low, close []float64) ([]int, int, int) {
+func CdlTristar(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLTRISTAR(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1311,10 +1318,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlUnique3River(open, high, low, close []float64) ([]int, int, int) {
+func CdlUnique3River(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLUNIQUE3RIVER(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1326,10 +1333,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlUpsideGap2Crows(open, high, low, close []float64) ([]int, int, int) {
+func CdlUpsideGap2Crows(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLUPSIDEGAP2CROWS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1341,10 +1348,10 @@ Input = Open, High, Low, Close
 Output = int
 
 */
-func CdlxSideGap3Methods(open, high, low, close []float64) ([]int, int, int) {
+func CdlxSideGap3Methods(open, high, low, close []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(open))
+	outInteger := make([]int32, len(open))
 	C.TA_CDLXSIDEGAP3METHODS(0, C.int(len(open)-1), (*C.double)(unsafe.Pointer(&open[0])), (*C.double)(unsafe.Pointer(&high[0])), (*C.double)(unsafe.Pointer(&low[0])), (*C.double)(unsafe.Pointer(&close[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -1638,10 +1645,10 @@ Input = double
 Output = int
 
 */
-func HtTrendMode(real []float64) ([]int, int, int) {
+func HtTrendMode(real []float64) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(real))
+	outInteger := make([]int32, len(real))
 	C.TA_HT_TRENDMODE(0, C.int(len(real)-1), (*C.double)(unsafe.Pointer(&real[0])), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -2018,10 +2025,10 @@ optInTimePeriod:(From 2 to 100000)
 Number of period
 
 */
-func MaxIndex(real []float64, timePeriod int) ([]int, int, int) {
+func MaxIndex(real []float64, timePeriod int) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(real))
+	outInteger := make([]int32, len(real))
 	C.TA_MAXINDEX(0, C.int(len(real)-1), (*C.double)(unsafe.Pointer(&real[0])), C.int(timePeriod), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -2148,10 +2155,10 @@ optInTimePeriod:(From 2 to 100000)
 Number of period
 
 */
-func MinIndex(real []float64, timePeriod int) ([]int, int, int) {
+func MinIndex(real []float64, timePeriod int) ([]int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outInteger := make([]int, len(real))
+	outInteger := make([]int32, len(real))
 	C.TA_MININDEX(0, C.int(len(real)-1), (*C.double)(unsafe.Pointer(&real[0])), C.int(timePeriod), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outInteger[0])))
 	return outInteger, int(outBegIdx), int(outNBElement)
 }
@@ -2195,11 +2202,11 @@ optInTimePeriod:(From 2 to 100000)
 Number of period
 
 */
-func MinMaxIndex(real []float64, timePeriod int) ([]int, []int, int, int) {
+func MinMaxIndex(real []float64, timePeriod int) ([]int32, []int32, int, int) {
 	var outBegIdx C.int
 	var outNBElement C.int
-	outMinIdx := make([]int, len(real))
-	outMaxIdx := make([]int, len(real))
+	outMinIdx := make([]int32, len(real))
+	outMaxIdx := make([]int32, len(real))
 	C.TA_MINMAXINDEX(0, C.int(len(real)-1), (*C.double)(unsafe.Pointer(&real[0])), C.int(timePeriod), &outBegIdx, &outNBElement, (*C.int)(unsafe.Pointer(&outMinIdx[0])), (*C.int)(unsafe.Pointer(&outMaxIdx[0])))
 	return outMinIdx, outMaxIdx, int(outBegIdx), int(outNBElement)
 }

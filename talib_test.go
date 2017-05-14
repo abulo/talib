@@ -4,15 +4,13 @@ import (
 	"math"
 	"reflect"
 	"testing"
-	"fmt"
 )
 
 func TestInit(t *testing.T) {
 }
 func TestAcos(t *testing.T) {
 	expected := []float64{1.5707963267948966, 0}
-	out, begInt, nbInt := Acos([]float64{0, 1})
-	fmt.Println(out, begInt, nbInt)
+	out := Acos([]float64{0, 1})
 	if !reflect.DeepEqual(expected, out) {
 		t.Errorf("Expected %#v got %#v.", expected, out)
 	}

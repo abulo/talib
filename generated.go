@@ -1,5 +1,13 @@
 package talib
 
+import (
+	"fmt"
+	"unsafe"
+)
+
+
+
+// #cgo LDFLAGS: -lm
 // #cgo LDFLAGS: -lta_lib
 // #include "ta-lib/ta_libc.h"
 import "C"

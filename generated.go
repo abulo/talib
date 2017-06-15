@@ -1,11 +1,5 @@
 package talib
 
-import (
-	"fmt"
-	"unsafe"
-)
-
-
 
 // #cgo LDFLAGS: -lm
 // #cgo LDFLAGS: -lta_lib
